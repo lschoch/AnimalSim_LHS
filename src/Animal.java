@@ -51,20 +51,23 @@ public abstract class Animal {
 	}// end preferred constructor
 
 	/**
-	 * Method to randomly determine the object's state of satiety.
+	 * Method to randomly set the object's state of satiety.
 	 */
 	public void eat() {
-		if (Math.random() > 0.5)
+		double r = Math.random();
+		System.out.println("eat r = " + r);
+		if (r > 0.5)
 			full = true;
 		else
 			full = false;
 	}// end eat
 
 	/**
-	 * Method to randomly determine the object's state of rest.
+	 * Method to randomly set the object's state of rest.
 	 */
 	public void sleep() {
-		if (Math.random() > 0.5)
+		double r = Math.random();
+		if (r > 0.5)
 			rested = true;
 		else
 			rested = false;
