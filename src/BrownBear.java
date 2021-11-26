@@ -5,7 +5,7 @@
  * @author lschoch
  * @version 1.0 CS-131-ON AnimalSim
  */
-public class BrownBear extends Animal {
+public class BrownBear extends Animal implements Walkable, Swimmable {
 	// Variable to store the value of subSpecies
 	private String subSpecies;
 
@@ -64,6 +64,18 @@ public class BrownBear extends Animal {
 		}
 		return found;
 	}// end subspeciesCheck
+	
+	@Override
+	public void swim(int direction) {
+		// TODO Auto-generated method stub
+		
+	}// end swim
+
+	@Override
+	public void walk(int direction) {
+		// TODO Auto-generated method stub
+		
+	}// end walk
 
 	/**
 	 * Getter for subSpecies
@@ -82,7 +94,12 @@ public class BrownBear extends Animal {
 	public void setSubSpecies(String subSpecies) {
 		this.subSpecies = subSpecies;
 	}// end setSubSpecies
-
+	
+	/**
+	 * Method to create a formatted string containing the class data.
+	 * 
+	 * @return formatted string containing the class data
+	 */
 	@Override
 	public String toString() {
 		return "BrownBear [subSpecies=" + subSpecies + ", simID=" + simID + ", l=" + l + ", full=" + full + ", rested="

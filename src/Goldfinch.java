@@ -5,7 +5,7 @@
  * @author lschoch
  * @version 1.0 CS-131-ON AnimalSim
  */
-public class Goldfinch extends Animal {
+public class Goldfinch extends Animal implements Walkable, Flyable {
 	// Variable to hold the wingspan in cm of the object.
 	private double wingSpan;
 
@@ -42,6 +42,18 @@ public class Goldfinch extends Animal {
 			iwe.printStackTrace();
 		}
 	}// end preferred constructor
+	
+	@Override
+	public void fly(Location l) {
+		// TODO Auto-generated method stub
+		
+	}// end fly
+
+	@Override
+	public void walk(int direction) {
+		// TODO Auto-generated method stub
+		
+	}// end walk
 
 	/**
 	 * Method to get the value of wingSpan.
