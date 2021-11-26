@@ -45,8 +45,7 @@ public class Goldfinch extends Animal implements Walkable, Flyable {
 	
 	@Override
 	public void fly(Location l) {
-		// TODO Auto-generated method stub
-		
+		setL(l);
 	}// end fly
 
 	@Override
