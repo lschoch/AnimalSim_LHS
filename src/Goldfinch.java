@@ -13,7 +13,7 @@ public class Goldfinch extends Animal {
 
 	/**
 	 * Empty argument constructor. Builds an object that inherits the empty-
-	 * argument parameters from the parent class and sets the wingspan to 9.0.
+	 * argument parameters from the parent class and sets wingSpan to 9.0.
 	 */
 	Goldfinch() {
 		super();
