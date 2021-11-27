@@ -1,44 +1,45 @@
+import java.util.ArrayList;
 
 public class Application {
 
 	public static void main(String[] args) {
 		System.out.print("************************************************\n"
-				   + " Note:\n"
-				   + " eac = empty-argument constructor\n"
-				   + " pc = preferred constructor\n"
-				   + "************************************************\n");
+				       + " Note:\n"
+				       + " eac = empty-argument constructor\n"
+				       + " pc = preferred constructor\n"
+				       + "************************************************\n\n");
 		
 		System.out.print("************************************************\n"
 					   + "                 Location Tests\n"
 					   + "************************************************\n");
-		System.out.println("Testing empty-argument constructor (eac):");
-		Location eac = new Location();
-		System.out.println("eac.toString = " + eac.toString() + "\n");
+		System.out.println("Testing empty-argument constructor (eacL):");
+		Location eacL = new Location();
+		System.out.println("eacL.toString = " + eacL.toString() + "\n");
 		
-		System.out.println("Testing preferred constructor (pc):");
-		Location pc = new Location(2,3);
-		System.out.println("pc.toString = " + pc.toString() + "\n");
+		System.out.println("Testing preferred constructor (pcL):");
+		Location pcL = new Location(2,3);
+		System.out.println("pcL.toString = " + pcL.toString() + "\n");
 		
 		System.out.println("Testing update method:");
-		pc.update(4, 5);
-		System.out.println("pc.toString = " 
-				+ pc.toString() + "\n");
+		pcL.update(4, 5);
+		System.out.println("pcL.toString = " 
+				+ pcL.toString() + "\n");
 		
 		System.out.println("Testing getCoordinates method:");
-		int [] coord = pc.getCoordinates();
+		int [] coord = pcL.getCoordinates();
 		System.out.println("xCoord = " + coord[0]);
 		System.out.println("yCoord = " + coord[1] + "\n");
 		
 		System.out.println("Testing Getters and Setters:");
-		pc.setxCoord(10);
-		pc.setyCoord(10);
-		System.out.println("xCoord = " + pc.getxCoord());
-		System.out.println("yCoord = " + pc.getyCoord() + "\n");
+		pcL.setxCoord(10);
+		pcL.setyCoord(10);
+		System.out.println("pcL.getxCoord = " + pcL.getxCoord());
+		System.out.println("pcL.getyCoord = " + pcL.getyCoord() + "\n");
 		
 		System.out.println("Testing InvalidCoordinateException for xCoord:");
-		pc.update(-1,2);
+		pcL.update(-1,2);
 		System.out.println("Testing InvalidCoordinateException for yCoord:");
-		pc.update(1,-2);
+		pcL.update(1,-2);
 		System.out.println();
 		
 		System.out.print("************************************************\n"
@@ -70,16 +71,20 @@ public class Application {
 		System.out.println();
 		
 		System.out.println("Testing eat method:");
+		// Set full to false
 		pcG.setFull(false);
 		System.out.println("pcG.isFull() = " + pcG.isFull());
+		// Repeat setting full until it is true
 		while(!pcG.isFull()) {
 			pcG.eat();
 		}
 		System.out.println("pcG.isFull() = " + pcG.isFull() + "\n");
 		
 		System.out.println("Testing sleep method:");
+		// Set rested to false
 		pcG.setRested(false);
 		System.out.println("pcG.isRested() = " + pcG.isRested());
+		// Repeat setting rested until it is true
 		while(!pcG.isRested()) {
 			pcG.sleep();
 		}
@@ -103,8 +108,8 @@ public class Application {
 		System.out.println();
 		
 		System.out.print("************************************************\n"
-		           + "                 BrownBear Tests\n"
-		           + "************************************************\n");
+		               + "                 BrownBear Tests\n"
+		               + "************************************************\n");
 		System.out.println("Testing empty-argument constructor (eacBB):");
 		BrownBear eacBB = new BrownBear();
 		System.out.println("eacBB.toString = \n " 
@@ -123,16 +128,20 @@ public class Application {
 		System.out.println();
 		
 		System.out.println("Testing eat method:");
+		// Set full to false
 		pcBB.setFull(false);
 		System.out.println("pcBB.isFull() = " + pcBB.isFull());
+		// Repeat setting full until it is true
 		while(!pcBB.isFull()) {
 			pcBB.eat();
 		}
 		System.out.println("pcBB.isFull() = " + pcBB.isFull() + "\n");
 		
 		System.out.println("Testing sleep method:");
+		// Set rested to false
 		pcBB.setRested(false);
 		System.out.println("pcBB.isRested() = " + pcBB.isRested());
+		// Repeat setting rested until it's true
 		while(!pcBB.isRested()) {
 			pcBB.sleep();
 		}
@@ -155,10 +164,22 @@ public class Application {
 		pcBB.setSubSpecies("Trout");
 		System.out.println();
 		
+		System.out.print("************************************************\n"
+	                   + "                  Generic Tests\n"
+	                   + "************************************************\n");
+		ArrayList <Animal> animalList = new ArrayList<Animal>(4);
+		Goldfinch gf1 = new Goldfinch(10, new Location(10,10), 5.5);
+		Goldfinch gf2 = new Goldfinch(20, new Location(20,20), 5.6);
+		BrownBear bb1 = new BrownBear(30, new Location(30,30), "Alaskan");
+		BrownBear bb2 = new BrownBear(40, new Location(40,40), "Grizzly");
+		animalList.add(gf1);
+		animalList.add(gf2);
+		animalList.add(bb1);
+		animalList.add(bb2);
 		
-		
-		
-		
+		for (Animal a : animalList) {
+			System.out.println(a.toString());
+		}
 		
 	}// end main
 
