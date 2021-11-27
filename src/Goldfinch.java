@@ -9,7 +9,8 @@ public class Goldfinch extends Animal implements Walkable, Flyable {
 	// Variable to hold the wingspan in cm of the object.
 	private double wingSpan;
 
-	InvalidWingspanException invalWingspanEx = new InvalidWingspanException("Wingspan must be between 5.0 and 11.0.");
+	private InvalidWingspanException invalWingspanEx = 
+			new InvalidWingspanException("Wingspan must be between 5.0 and 11.0.");
 
 	/**
 	 * Empty argument constructor. Builds an object that inherits the empty-
