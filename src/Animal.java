@@ -55,7 +55,6 @@ public abstract class Animal {
 	 */
 	public void eat() {
 		double r = Math.random();
-		System.out.println("eat r = " + r);
 		if (r > 0.5)
 			full = true;
 		else
