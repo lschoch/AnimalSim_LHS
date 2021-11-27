@@ -40,7 +40,7 @@ public class Goldfinch extends Animal implements Walkable, Flyable {
 				throw (invalWingspanEx);
 		} catch (InvalidWingspanException iwe) {
 			System.out.println(ws + " -> Invalid Wingspan. " + iwe.getMessage());
-			iwe.printStackTrace();
+			//iwe.printStackTrace();
 		}
 	}// end preferred constructor
 	
@@ -70,7 +70,14 @@ public class Goldfinch extends Animal implements Walkable, Flyable {
 	 * @param wingSpan the wingSpan to set
 	 */
 	public void setWingSpan(double ws) {
-		wingSpan = ws;
+		try {
+			if (ws > 5.0 && ws < 11.0)
+				wingSpan = ws;
+			else
+				throw (invalWingspanEx);
+		} catch (InvalidWingspanException iwe) {
+			System.out.println(ws + " -> Invalid Wingspan. " + iwe.getMessage());
+		}
 	}// end setWingSpan
 
 	/**
