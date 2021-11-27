@@ -40,10 +40,10 @@ public class Location {
 		} catch (InvalidCoordinateException ice) {
 			if (x < 0) {
 				System.out.println(x + " -> Invalid X Coordinate. " + ice.getMessage());
-				ice.printStackTrace();
+				//ice.printStackTrace();
 			} else if (y < 0) {
 				System.out.println(y + " -> Invalid Y Coordinate. " + ice.getMessage());
-				ice.printStackTrace();
+				//ice.printStackTrace();
 			}
 		}
 	}// end preferred constructor
@@ -66,10 +66,10 @@ public class Location {
 		} catch (InvalidCoordinateException ice) {
 			if (x < 0) {
 				System.out.println(x + " -> Invalid X Coordinate. " + ice.getMessage());
-				ice.printStackTrace();
+				//ice.printStackTrace();
 			} else if (y < 0) {
 				System.out.println(y + " -> Invalid Y Coordinate. " + ice.getMessage());
-				ice.printStackTrace();
+				//ice.printStackTrace();
 			}
 		}
 	}// end update
@@ -83,6 +83,43 @@ public class Location {
 		int[] coord = { xCoord, yCoord };
 		return coord;
 	}// end getCoordinates
+	
+	
+	/**
+	 * Getter for xCoord
+	 * 
+	 * @return the xCoord
+	 */
+	public int getxCoord() {
+		return xCoord;
+	}// end getxCoord
+
+	/**
+	 * Setter for xCoord
+	 * 
+	 * @param xCoord the xCoord to set
+	 */
+	public void setxCoord(int xCoord) {
+		this.xCoord = xCoord;
+	}// end setxCoord
+
+	/**
+	 * Getter for yCoord
+	 * 
+	 * @return the yCoord
+	 */
+	public int getyCoord() {
+		return yCoord;
+	}// end getyCoord
+
+	/**
+	 * Setter for yCoord
+	 * 
+	 * @param yCoord the yCoord to set
+	 */
+	public void setyCoord(int yCoord) {
+		this.yCoord = yCoord;
+	}// end setyCoord
 
 	/**
 	 * Method to create a formatted string containing the class data.
