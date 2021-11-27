@@ -41,7 +41,7 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 				throw (invalSubspeciesEx);
 		} catch (InvalidSubspeciesException ise) {
 			System.out.println(subSpecies + " -> " + ise.getMessage());
-			ise.printStackTrace();
+			//ise.printStackTrace();
 		}
 
 	}// end preferred constructor
@@ -92,7 +92,15 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 	 * @param subSpecies the subSpecies to set
 	 */
 	public void setSubSpecies(String subSpecies) {
-		this.subSpecies = subSpecies;
+		try {
+			if (subspeciesValid(subSpecies))
+				this.subSpecies = subSpecies;
+			else
+				throw (invalSubspeciesEx);
+		} catch (InvalidSubspeciesException ise) {
+			System.out.println(subSpecies + " -> " + ise.getMessage());
+			//ise.printStackTrace();
+		}
 	}// end setSubSpecies
 	
 	/**
