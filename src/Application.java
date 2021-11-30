@@ -6,7 +6,12 @@ public class Application {
 		System.out.print("************************************************\n"
 				       + " Note:\n"
 				       + " eac = empty-argument constructor\n"
-				       + " pc = preferred constructor\n"
+				       + " pc = preferred constructor\n\n"
+				       + " For direction:\n"
+				       + "  1 means move right\n"
+				       + " -1 means move left\n"
+				       + "  2 means move up\n"
+				       + " -2 means move down\n"
 				       + "************************************************\n\n");
 		
 		System.out.print("************************************************\n"
@@ -45,6 +50,8 @@ public class Application {
 		System.out.print("************************************************\n"
 				       + "                  Animal Tests\n"
 				       + "************************************************\n");
+//		Uncomment the line following this sentence to see the compiler error 
+//		that arises from trying to instantiate this abstract class.
 //		Animal a = new Animal();
 		System.out.println("Attempts to instantiate this abstract class result "
 			+ "in a compiler error:\n \"cannot instantiate the type Animal\".");
@@ -63,11 +70,33 @@ public class Application {
 		System.out.println("pcG.toString = \n " + pcG.toString() + "\n");
 		
 		System.out.println("Testing fly method:");
+		System.out.println("Starting location\t\t" + pcG.getL().toString());
 		pcG.fly(new Location(8,8));
-		System.out.println("pcG.toString = \n " + pcG.toString() + "\n");
+		System.out.println("pcG.fly(new Location(8,8))\t" + pcG.getL().toString() + "\n");
 		
 		System.out.println("Testing walk method:");
-		// TODO Auto-generated method stub
+		System.out.println("Starting location\t\t" + pcG.getL().toString());
+		pcG.walk(-2);
+		System.out.println("pcG.walk(-2) = down 1 unit\t" + pcG.getL().toString());
+		pcG.walk( 2);
+		System.out.println("pcG.walk( 2) = up 1 unit\t" + pcG.getL().toString());
+		pcG.walk(-1);
+		System.out.println("pcG.walk(-1) = left 1 unit\t" + pcG.getL().toString());
+		pcG.walk(1);
+		System.out.println("pcG.walk( 1) = right 1 unit\t" + pcG.getL().toString());
+		
+		pcG.getL().update(0, 0);
+		System.out.println("Starting location\t\t" + pcG.getL().toString());
+		pcG.walk(-2);
+		System.out.println("pcG.walk(-2) = down 1 unit\t" + pcG.getL().toString()
+				+ " (Negative coordinates not allowed, yCoord remains at 0.");
+		pcG.walk( 2);
+		System.out.println("pcG.walk( 2) = up 1 unit\t" + pcG.getL().toString());
+		pcG.walk(-1);
+		System.out.println("pcG.walk(-1) = left 1 unit\t" + pcG.getL().toString()
+				+ " (Negative coordinates not allowed, xCoord remains at 0.");
+		pcG.walk(1);
+		System.out.println("pcG.walk( 1) = right 1 unit\t" + pcG.getL().toString());
 		System.out.println();
 		
 		System.out.println("Testing eat method:");
@@ -120,11 +149,54 @@ public class Application {
 		System.out.println("pcBB.toString = \n " + pcBB.toString() + "\n");
 		
 		System.out.println("Testing swim method:");
-		// TODO Auto-generated method stub
+		System.out.println("Starting location\t\t" + pcBB.getL().toString());
+		pcBB.swim(-2);
+		System.out.println("pcBB.swim(-2) = down 2 units\t" + pcBB.getL().toString());
+		pcBB.swim( 2);
+		System.out.println("pcBB.swim( 2) = up 2 units\t" + pcBB.getL().toString());
+		pcBB.swim(-1);
+		System.out.println("pcBB.swim(-1) = left 2 units\t" + pcBB.getL().toString());
+		pcBB.swim(1);
+		System.out.println("pcBB.swim( 1) = right 2 units\t" + pcBB.getL().toString());
+		
+		pcBB.getL().update(0, 0);
+		System.out.println("Starting location\t\t" + pcBB.getL().toString());
+		pcBB.swim(-2);
+		System.out.println("pcBB.swim(-2) = down 2 units\t" + pcBB.getL().toString()
+				+ " (Negative coordinates not allowed, yCoord remains at 0.)");
+		pcBB.swim( 2);
+		System.out.println("pcBB.swim( 2) = up 2 units\t" + pcBB.getL().toString());
+		pcBB.swim(-1);
+		System.out.println("pcBB.swim(-1) = left 2 units\t" + pcBB.getL().toString()
+				+ " (Negative coordinates not allowed, xCoord remains at 0.)");
+		pcBB.swim(1);
+		System.out.println("pcBB.swim( 1) = right 2 units\t" + pcBB.getL().toString());
 		System.out.println();
 		
 		System.out.println("Testing walk method:");
-		// TODO Auto-generated method stub
+		pcBB.getL().update(3, 3);
+		System.out.println("Starting location\t\t" + pcBB.getL().toString());
+		pcBB.walk(-2);
+		System.out.println("pcBB.walk(-2) = down 3 units\t" + pcBB.getL().toString());
+		pcBB.walk( 2);
+		System.out.println("pcBB.walk( 2) = up 3 units\t" + pcBB.getL().toString());
+		pcBB.walk(-1);
+		System.out.println("pcBB.walk(-1) = left 3 units\t" + pcBB.getL().toString());
+		pcBB.walk(1);
+		System.out.println("pcBB.walk( 1) = right 3 units\t" + pcBB.getL().toString());
+		
+		pcBB.getL().update(0, 0);
+		System.out.println("Starting location\t\t" + pcBB.getL().toString());
+		pcBB.walk(-2);
+		System.out.println("pcBB.walk(-2) = down 3 units\t" + pcBB.getL().toString()
+				+ " (Negative coordinates not allowed, yCoord remains at 0.)");
+		pcBB.walk( 2);
+		System.out.println("pcBB.walk( 2) = up 3 units\t" + pcBB.getL().toString());
+		pcBB.walk(-1);
+		System.out.println("pcBB.walk(-1) = left 3 units\t" + pcBB.getL().toString()
+				+ " (Negative coordinates not allowed, xCoord remains at 0.)");
+		pcBB.walk(1);
+		System.out.println("pcBB.walk( 1) = right 3 units\t" + pcBB.getL().toString());
 		System.out.println();
 		
 		System.out.println("Testing eat method:");
