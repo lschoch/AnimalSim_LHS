@@ -40,19 +40,18 @@ public class Application {
 		
 		System.out.println("Testing update method:");
 		pcL.update(4, 5);
-		System.out.println("pcL.toString = " 
+		System.out.println("pcL.update(4, 5) >  pcL.toString = " 
 				+ pcL.toString() + "\n");
 		
 		System.out.println("Testing getCoordinates method:");
-		int [] coord = pcL.getCoordinates();
-		System.out.println("xCoord = " + coord[0]);
-		System.out.println("yCoord = " + coord[1] + "\n");
+		System.out.println("pcL.getCoordinates()[0] = " + pcL.getCoordinates()[0]);
+		System.out.println("pcL.getCoordinates()[1] = " + pcL.getCoordinates()[1] + "\n");
 		
 		System.out.println("Testing Getters and Setters:");
 		pcL.setxCoord(10);
 		pcL.setyCoord(10);
-		System.out.println("pcL.getxCoord = " + pcL.getxCoord());
-		System.out.println("pcL.getyCoord = " + pcL.getyCoord() + "\n");
+		System.out.println("pcL.setxCoord(10) > pcL.getxCoord = " + pcL.getxCoord());
+		System.out.println("pcL.setyCoord(10) > pcL.getyCoord = " + pcL.getyCoord() + "\n");
 		
 		System.out.println("Testing InvalidCoordinateException for xCoord:");
 		pcL.update(-1,2);
@@ -102,12 +101,12 @@ public class Application {
 		System.out.println("Starting location\t\t" + pcG.getL().toString());
 		pcG.walk(-2);
 		System.out.println("pcG.walk(-2) = down 1 unit\t" + pcG.getL().toString()
-				+ " (Negative coordinates not allowed, yCoord remains at 0.");
+				+ " (Negative coordinates not allowed, yCoord remains at 0.)");
 		pcG.walk( 2);
 		System.out.println("pcG.walk( 2) = up 1 unit\t" + pcG.getL().toString());
 		pcG.walk(-1);
 		System.out.println("pcG.walk(-1) = left 1 unit\t" + pcG.getL().toString()
-				+ " (Negative coordinates not allowed, xCoord remains at 0.");
+				+ " (Negative coordinates not allowed, xCoord remains at 0.)");
 		pcG.walk(1);
 		System.out.println("pcG.walk( 1) = right 1 unit\t" + pcG.getL().toString());
 		System.out.println();
@@ -138,11 +137,11 @@ public class Application {
 		pcG.setFull(false);
 		pcG.setRested(false);
 		pcG.setWingSpan(8.0);
-		System.out.println("pcG.getSimID() = " + pcG.getSimID() 
-			 + "\npcG.getL() = " + pcG.getL()
-			 + "\npcG.isFull() = " + pcG.isFull()
-			 + "\npcG.isRested() = " + pcG.isRested()
-			 + "\npcG.getWingSpan() = " + pcG.getWingSpan()
+		System.out.println("pcG.setSimID(200) > pcG.getSimID() = " + pcG.getSimID() 
+			 + "\npcG.setL(new Location(200,200)) > pcG.getL() = " + pcG.getL()
+			 + "\npcG.setFull(false) > pcG.isFull() = " + pcG.isFull()
+			 + "\npcG.setRested(false) > pcG.isRested() = " + pcG.isRested()
+			 + "\npcG.setWingSpan(8.0) > pcG.getWingSpan() = " + pcG.getWingSpan()
 			 + "\n");
 		
 		System.out.println("Testing InvalidWingSpanException:");
@@ -243,11 +242,11 @@ public class Application {
 		pcBB.setFull(false);
 		pcBB.setRested(false);
 		pcBB.setSubSpecies("Grizzly");
-		System.out.println("pcBB.getSimID() = " + pcBB.getSimID() 
-			 + "\npcBB.getL() = " + pcBB.getL()
-			 + "\npcBB.isFull() = " + pcBB.isFull()
-			 + "\npcBB.isRested() = " + pcBB.isRested()
-			 + "\npcBB.getSubSpecies() = " + pcBB.getSubSpecies()
+		System.out.println("pcBB.setSimID(300) > pcBB.getSimID() = " + pcBB.getSimID() 
+			 + "\npcBB.setL(new Location(300,300)) pcBB.getL() = " + pcBB.getL()
+			 + "\npcBB.setFull(false) > pcBB.isFull() = " + pcBB.isFull()
+			 + "\npcBB.setRested(false) > pcBB.isRested() = " + pcBB.isRested()
+			 + "\npcBB.setSubSpecies(\"Grizzly\") > pcBB.getSubSpecies() = " + pcBB.getSubSpecies()
 			 + "\n");
 		
 		System.out.println("Testing InvalidSubspeciesException:");
