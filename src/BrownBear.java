@@ -9,7 +9,7 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 	// Variable to store the value of subSpecies
 	private String subSpecies;
 
-	InvalidSubspeciesException invalSubspeciesEx = new InvalidSubspeciesException("Invalid Subspecies");
+	private InvalidSubspeciesException invalSubspeciesEx = new InvalidSubspeciesException("invalid subspecies");
 
 	/**
 	 * Empty argument constructor. Builds an object that inherits the empty-
@@ -29,7 +29,7 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 	 * @param subSpecies the value of subSpecies, the object's subspecies
 	 */
 	public BrownBear(int simID, Location l, String subSpecies) {
-		this.simID = simID;
+		setSimID(simID);
 		this.l = l;
 		this.full = false;
 		this.rested = true;
@@ -68,7 +68,7 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 	@Override
 	public void swim(int direction) {
 		int [] coord = l.getCoordinates();
-		String str = "Negative coordinates not allowed. BrownBear did not move.";
+		String str = "Invalid direction. BrownBear did not move.";
 		
 		// Modify coordinates to reflect a move of two units in the specified 
 		// direction.
@@ -104,7 +104,7 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 	@Override
 	public void walk(int direction) {
 		int [] coord = l.getCoordinates();
-		String str = "Negative coordinates not allowed. BrownBear did not move.";
+		String str = "Invalid direction. BrownBear did not move.";
 		
 		// Modify coordinates to reflect a move of three units in the specified 
 		// direction.

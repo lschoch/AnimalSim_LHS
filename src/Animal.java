@@ -16,6 +16,8 @@ public abstract class Animal {
 	protected boolean full;
 	// Boolean variable to store the animal's state of rest.
 	protected boolean rested;
+	private InvalidSimIDException invalSimIDEx = 
+			new InvalidSimIDException("simID cannot be negative.");
 
 	/**
 	 * The empty-argument constructor for this object
@@ -35,14 +37,13 @@ public abstract class Animal {
 	 *              in the simulation world
 	 */
 	public Animal(int simID, Location l) {
-		InvalidSimIDException invalSimIDEx = new InvalidSimIDException("simID cannot be negative.");
 		try {
 			if (simID < 0)
 				throw (invalSimIDEx);
 			else
 				this.simID = simID;
 		} catch (InvalidSimIDException ise) {
-			System.out.println("Invalid simID: " + simID + ". " + ise.getMessage());
+			System.out.println(simID + " => invalid simID, " + ise.getMessage());
 		}
 
 		this.l = l;
@@ -87,7 +88,14 @@ public abstract class Animal {
 	 * @param simID the value of simID to be set
 	 */
 	public void setSimID(int simID) {
-		this.simID = simID;
+		try {
+				if (simID < 0) 
+					throw(invalSimIDEx);
+				else
+					this.simID = simID;
+		} catch(InvalidSimIDException ise) {
+			System.out.println(simID + " -> invalid simID, " + ise.getMessage());
+		}
 	}// end setSimID
 
 	/**

@@ -10,7 +10,7 @@ public class Goldfinch extends Animal implements Walkable, Flyable {
 	private double wingSpan;
 
 	private InvalidWingspanException invalWingspanEx = 
-			new InvalidWingspanException("Wingspan must be between 5.0 and 11.0.");
+			new InvalidWingspanException("wingspan must be between 5.0 and 11.0.");
 
 	/**
 	 * Empty argument constructor. Builds an object that inherits the empty-
@@ -29,7 +29,7 @@ public class Goldfinch extends Animal implements Walkable, Flyable {
 	 * @param ws    the value of wingSpan, the object's wingspan
 	 */
 	Goldfinch(int simID, Location l, double ws) {
-		this.simID = simID;
+		setSimID(simID);
 		this.l = l;
 		full = false;
 		rested = true;
@@ -39,7 +39,7 @@ public class Goldfinch extends Animal implements Walkable, Flyable {
 			else
 				throw (invalWingspanEx);
 		} catch (InvalidWingspanException iwe) {
-			System.out.println(ws + " -> Invalid Wingspan. " + iwe.getMessage());
+			System.out.println(ws + " -> invalid wingspan, " + iwe.getMessage());
 			//iwe.printStackTrace();
 		}
 	}// end preferred constructor
@@ -52,7 +52,7 @@ public class Goldfinch extends Animal implements Walkable, Flyable {
 	@Override
 	public void walk(int direction) {
 		int [] coord = l.getCoordinates();
-		String str = "Negative coordinates not allowed. Goldfinch did not move.";
+		String str = "Invalid direction. Goldfinch did not move.";
 		
 		// Modify coordinates to reflect a move of one unit in the specified 
 		// direction.
@@ -106,7 +106,7 @@ public class Goldfinch extends Animal implements Walkable, Flyable {
 			else
 				throw (invalWingspanEx);
 		} catch (InvalidWingspanException iwe) {
-			System.out.println(ws + " -> Invalid Wingspan. " + iwe.getMessage());
+			System.out.println(ws + " -> invalid wingspan, " + iwe.getMessage());
 		}
 	}// end setWingSpan
 

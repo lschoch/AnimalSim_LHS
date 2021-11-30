@@ -39,10 +39,10 @@ public class Location {
 			}
 		} catch (InvalidCoordinateException ice) {
 			if (x < 0) {
-				System.out.println(x + " -> Invalid X Coordinate. " + ice.getMessage());
+				System.out.println(x + " -> invalid X Coordinate, " + ice.getMessage());
 				//ice.printStackTrace();
 			} else if (y < 0) {
-				System.out.println(y + " -> Invalid Y Coordinate. " + ice.getMessage());
+				System.out.println(y + " -> invalid Y Coordinate, " + ice.getMessage());
 				//ice.printStackTrace();
 			}
 		}
@@ -65,10 +65,10 @@ public class Location {
 			}
 		} catch (InvalidCoordinateException ice) {
 			if (x < 0) {
-				System.out.println(x + " -> Invalid X Coordinate. " + ice.getMessage());
+				System.out.println(x + " -> invalid X Coordinate, " + ice.getMessage());
 				//ice.printStackTrace();
 			} else if (y < 0) {
-				System.out.println(y + " -> Invalid Y Coordinate. " + ice.getMessage());
+				System.out.println(y + " -> invalid Y Coordinate, " + ice.getMessage());
 				//ice.printStackTrace();
 			}
 		}

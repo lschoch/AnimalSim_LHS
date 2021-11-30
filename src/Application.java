@@ -1,7 +1,20 @@
 import java.util.ArrayList;
 
+/**
+ * Class to test the classes and methods of this package.
+ * 
+ * @author lschoch
+ * @version 1.0 CS-131-ON AnimalSim
+ */
 public class Application {
-
+	/**
+	 * The main method. Instantiates all classes and tests all methods of each
+	 * class. Creates a generic ArrayList object that can hold any kind of 
+	 * animal,instantiates it with two animals of each type and iterates through 
+	 * the list to print class data for each element.
+	 * 
+	 * @param args this method does not use command line arguments
+	 */
 	public static void main(String[] args) {
 		System.out.print("************************************************\n"
 				       + " Note:\n"
@@ -136,6 +149,11 @@ public class Application {
 		pcG.setWingSpan(5.0);
 		System.out.println();
 		
+		System.out.println("Testing InvalidSimIDException:");
+		pcG.setSimID(-1);
+		Goldfinch g = new Goldfinch(-2, new Location(1, 3), 5.1);
+		System.out.println();
+		
 		System.out.print("************************************************\n"
 		               + "                 BrownBear Tests\n"
 		               + "************************************************\n");
@@ -236,8 +254,17 @@ public class Application {
 		pcBB.setSubSpecies("Trout");
 		System.out.println();
 		
+		System.out.println("Testing InvalidSimIDException:");
+		pcBB.setSimID(-1);
+		BrownBear brBear = new BrownBear(-2, new Location(1, 3), "Grizzly");
+		System.out.println();
+		
+//		*********************************************
+//		 Generics Tests
+//		*********************************************
+		
 		System.out.print("************************************************\n"
-	                   + "                  Generic Tests\n"
+	                   + "                 Generics Tests\n"
 	                   + "************************************************\n");
 		ArrayList <Animal> animalList = new ArrayList<Animal>(4);
 		Goldfinch gf1 = new Goldfinch(10, new Location(10,10), 5.5);
