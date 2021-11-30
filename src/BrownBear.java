@@ -67,13 +67,73 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 	
 	@Override
 	public void swim(int direction) {
-		// TODO Auto-generated method stub
+		int [] coord = l.getCoordinates();
+		String str = "Negative coordinates not allowed. BrownBear did not move.";
+		
+		// Modify coordinates to reflect a move of two units in the specified 
+		// direction.
+		switch (direction) {
+		case 1:		coord[0]+=2;
+					break;
+		case 2: 	coord[1]+=2;
+					break;
+		case -1:	if (coord[0]>1) {
+						coord[0]-=2;
+						break;
+					}
+					else {
+						coord[0]=0;
+						break;
+					}
+		case -2:	if (coord[1]>1) {
+						coord[1]-=2;
+						break;
+					}
+					else {
+						coord[1]=0;
+						break;
+					}
+		default:	System.out.println(str);
+		}// end switch
+		
+		// Update location object to the new coordinates
+		l.update(coord[0], coord[1]);
 		
 	}// end swim
 
 	@Override
 	public void walk(int direction) {
-		// TODO Auto-generated method stub
+		int [] coord = l.getCoordinates();
+		String str = "Negative coordinates not allowed. BrownBear did not move.";
+		
+		// Modify coordinates to reflect a move of three units in the specified 
+		// direction.
+		switch (direction) {
+		case 1:		coord[0]+=3;
+					break;
+		case 2: 	coord[1]+=3;
+					break;
+		case -1:	if (coord[0]>2) {
+						coord[0]-=3;
+						break;
+					}
+					else {
+						coord[0]=0;
+						break;
+					}
+		case -2:	if (coord[1]>2) {
+						coord[1]-=3;
+						break;
+					}
+					else {
+						coord[1]=0;
+						break;
+					}
+		default:	System.out.println(str);
+		}// end switch
+		
+		// Update location object to the new coordinates
+		l.update(coord[0], coord[1]);
 		
 	}// end walk
 
