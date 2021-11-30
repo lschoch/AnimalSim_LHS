@@ -46,12 +46,42 @@ public class Goldfinch extends Animal implements Walkable, Flyable {
 	
 	@Override
 	public void fly(Location l) {
-		setL(l);
+		this.setL(l);
 	}// end fly
 
 	@Override
 	public void walk(int direction) {
-		// TODO Auto-generated method stub
+		int [] coord = l.getCoordinates();
+		String str = "Negative coordinates not allowed. Goldfinch did not move.";
+		
+		// Modify coordinates to reflect a move of one unit in the specified 
+		// direction.
+		switch (direction) {
+		case 1:		coord[0]+=1;
+					break;
+		case 2: 	coord[1]+=1;
+					break;
+		case -1:	if (coord[0]>0) {
+						coord[0]-=1;
+						break;
+					}
+					else {
+						//System.out.println(str);
+						break;
+					}
+		case -2:	if (coord[1]>0) {
+						coord[1]-=1;
+						break;
+					}
+					else {
+						//System.out.println(str);
+						break;
+					}
+		default:	System.out.println(str);
+		}// end switch
+		
+		// Update location object to the new coordinates
+		l.update(coord[0], coord[1]);
 		
 	}// end walk
 
