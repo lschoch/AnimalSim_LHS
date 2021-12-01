@@ -101,12 +101,12 @@ public class Application {
 		System.out.println("Starting location\t\t" + pcG.getL().toString());
 		pcG.walk(-2);
 		System.out.println("pcG.walk(-2) = down 1 unit\t" + pcG.getL().toString()
-				+ " (Negative coordinates not allowed, yCoord remains at 0.)");
+				+ " (Negative coordinates not allowed, yCoord remains at 0)");
 		pcG.walk( 2);
 		System.out.println("pcG.walk( 2) = up 1 unit\t" + pcG.getL().toString());
 		pcG.walk(-1);
 		System.out.println("pcG.walk(-1) = left 1 unit\t" + pcG.getL().toString()
-				+ " (Negative coordinates not allowed, xCoord remains at 0.)");
+				+ " (Negative coordinates not allowed, xCoord remains at 0)");
 		pcG.walk(1);
 		System.out.println("pcG.walk( 1) = right 1 unit\t" + pcG.getL().toString());
 		System.out.println();
@@ -180,12 +180,12 @@ public class Application {
 		System.out.println("Starting location\t\t" + pcBB.getL().toString());
 		pcBB.swim(-2);
 		System.out.println("pcBB.swim(-2) = down 2 units\t" + pcBB.getL().toString()
-				+ " (Negative coordinates not allowed, yCoord remains at 0.)");
+				+ " (Negative coordinates not allowed, yCoord remains at 0)");
 		pcBB.swim( 2);
 		System.out.println("pcBB.swim( 2) = up 2 units\t" + pcBB.getL().toString());
 		pcBB.swim(-1);
 		System.out.println("pcBB.swim(-1) = left 2 units\t" + pcBB.getL().toString()
-				+ " (Negative coordinates not allowed, xCoord remains at 0.)");
+				+ " (Negative coordinates not allowed, xCoord remains at 0)");
 		pcBB.swim(1);
 		System.out.println("pcBB.swim( 1) = right 2 units\t" + pcBB.getL().toString());
 		System.out.println();
@@ -206,12 +206,12 @@ public class Application {
 		System.out.println("Starting location\t\t" + pcBB.getL().toString());
 		pcBB.walk(-2);
 		System.out.println("pcBB.walk(-2) = down 3 units\t" + pcBB.getL().toString()
-				+ " (Negative coordinates not allowed, yCoord remains at 0.)");
+				+ " (Negative coordinates not allowed, yCoord remains at 0)");
 		pcBB.walk( 2);
 		System.out.println("pcBB.walk( 2) = up 3 units\t" + pcBB.getL().toString());
 		pcBB.walk(-1);
 		System.out.println("pcBB.walk(-1) = left 3 units\t" + pcBB.getL().toString()
-				+ " (Negative coordinates not allowed, xCoord remains at 0.)");
+				+ " (Negative coordinates not allowed, xCoord remains at 0)");
 		pcBB.walk(1);
 		System.out.println("pcBB.walk( 1) = right 3 units\t" + pcBB.getL().toString());
 		System.out.println();
